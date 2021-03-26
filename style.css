@@ -1,245 +1,244 @@
 body {
-    margin: 0;
-    padding-top: 4%;
-    padding-bottom: 3%;
-    background-color: white;
-    color: white;
+	margin: 0;
+	padding-top: 4%;
+	padding-bottom: 3%;
+	background-color: rgb(30, 38, 53);
+	color: white;
 }
 
 section {
-    margin-top: 0;
-    margin-left: auto;
-    margin-bottom: 2em;
-    margin-right: auto;
-    max-width: 1200px;
-    width: 95%;
-    border-radius: 5px;
-    background-color: #4B5F83;
-    border-bottom: 1px solid rgba(0, 0, 0, .125);
-    box-shadow: 0 6px 10px rgba(120, 120, 120, 0.75);
+	margin-top: 0;
+	margin-left: auto;
+	margin-bottom: 2em;
+	margin-right: auto;
+	max-width: 1200px;
+	width: 95%;
+	border-radius: 5px;
+	background-color: #4b5f83;
+	border-bottom: 1px solid rgba(0, 0, 0, .125);
+	box-shadow: 0 6px 12px rgba(72, 90, 124, 0.75);
 }
 
 a {
-    color: white;
-    text-decoration: none;
+	color: white;
+	text-decoration: none;
 }
 
 a:hover {
-    color: #7289da !important;
-    text-decoration: none;
+	color: white !important;
+	text-decoration: none;
 }
 
 section:hover {
-    box-shadow: 0 9px 13px rgba(120, 120, 120, 0.75);
+	box-shadow: 0 8px 16px rgba(72, 90, 124, 0.75);
 }
 
 section::after {
-    content: '';
-    display: block;
-    clear: right;
+	content: '';
+	display: block;
+	clear: right;
 }
 
-section>p {
-    margin: 0;
+section > p {
+	margin: 0;
 }
 
-section>a {
-    background-color: #4B5F83;
-    color: white;
-    display: block;
-    padding: 20px;
-    text-decoration: none;
-    width: 100%;
-    text-align: center;
-    font-size: 120%;
-    border-top: 2px solid rgba(20, 20, 20, 0.125);
+section > a {
+	background-color: #4b5f83;
+	color: white;
+	display: block;
+	padding: 20px;
+	text-decoration: none;
+	width: 100%;
+	text-align: center;
+	font-size: 120%;
+	border-top: 2px solid rgba(20, 20, 20, 0.125);
 }
 
-section>a:first-child {
-    border-radius: 5px 5px 0px 0px;
-    
+section > a:first-child {
+	border-radius: 5px 5px 0px 0px;
 }
 
-section>a:last-child {
-    border-radius: 0px 0px 5px 5px;
+section > a:last-child {
+	border-radius: 0px 0px 5px 5px;
 }
 
-section>a:hover {
-    color: white;
-    text-decoration: none;
-    background-color: #7289DA;
+section > a:hover {
+	color: white;
+	text-decoration: none;
+	background-color: #7289da;
 }
 
-p>a {
-    color: white;
-    text-decoration: none;
+p > a {
+	color: white;
+	text-decoration: none;
 }
 
-p>a:hover {
-    color: #7289da;
-    text-decoration: none;
+p > a:hover {
+	color: #7289da;
+	text-decoration: none;
 }
 
 .features {
-    padding: 15px;
-    border-bottom: 2px solid rgba(20, 20, 20, 0.125);
-    text-align: center;
+	padding: 15px;
+	border-bottom: 2px solid rgba(20, 20, 20, 0.125);
+	text-align: center;
 }
 
 .features:hover {
-    background-color: #7289DA;
+	background-color: #7289da;
 }
 
 .features:first-child {
-    border-radius: 5px 5px 0px 0px;
+	border-radius: 5px 5px 0px 0px;
 }
 
 .features:first-child:hover {
-    background-color: #4B5F83;
+	background-color: #4b5f83;
 }
 
 .features:last-child {
-    border-radius: 0px 0px 5px 5px;
-    border-bottom: 0;
+	border-radius: 0px 0px 5px 5px;
+	border-bottom: 0;
 }
 
-.features>p {
-    margin-bottom: 0;
+.features > p {
+	margin-bottom: 0;
 }
 
 .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 45%;
-    height: 45%;
-    max-width: 250px;
-    max-height: 250px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 45%;
+	height: 45%;
+	max-width: 250px;
+	max-height: 250px;
 }
 
 .discordbots {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 85%;
-    height: 85%;
-    max-width: 500px;
-    max-height: 500px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	height: 90%;
+	max-width: 550px;
+	max-height: 550px;
 }
 
 h1 {
-    font-size: 250%;
-    color: white;
+	font-size: 250%;
+	color: white;
 }
 
 h3 {
-    color: white;
+	color: white;
 }
 
-section>h2 {
-    margin: 0;
+section > h2 {
+	margin: 0;
 }
 
 footer {
-    text-align: center;
-    font-size: 85%;
-    color: black;
-    font-weight: bold;
+	text-align: center;
+	font-size: 90%;
+	color: white;
+	font-weight: bold;
 }
 
 ::-webkit-scrollbar {
-    width: 13px;
+	width: 13px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #4B5F83;
-    border-radius: 5px;
+	background: #4b5f83;
+	border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #7289DA; 
+	background: #7289da;
 }
 
 @media only screen and (max-width: 1300px) {
-    body {
-        padding-top: 3%;
-        padding-bottom: 3%;
-    }
+	body {
+		padding-top: 3%;
+		padding-bottom: 3%;
+	}
 }
 
 @media only screen and (max-width: 800px) {
-    body {
-        padding-top: 2%;
-        padding-bottom: 2%;
-    }
+	body {
+		padding-top: 2%;
+		padding-bottom: 2%;
+	}
 
-    section>a {
-        font-size: 125%;
-    }
+	section > a {
+		font-size: 125%;
+	}
 
-    h1 {
-        font-size: 270%;
-    }
+	h1 {
+		font-size: 270%;
+	}
 
-    h3 {
-        font-size: 145%;
-    }
+	h3 {
+		font-size: 145%;
+	}
 
-    p {
-        font-size: 130%;
-    }
+	p {
+		font-size: 130%;
+	}
 }
 
 @media only screen and (max-width: 600px) {
-    section>a {
-        font-size: 130%;
-    }
+	section > a {
+		font-size: 130%;
+	}
 
-    h1 {
-        font-size: 255%;
-    }
+	h1 {
+		font-size: 255%;
+	}
 
-    h3 {
-        font-size: 165%;
-    }
+	h3 {
+		font-size: 165%;
+	}
 
-    p {
-        font-size: 125%;
-    }
+	p {
+		font-size: 125%;
+	}
 }
 
 @media only screen and (max-width: 400px) {
-    section>a {
-        font-size: 100%;
-    }
+	section > a {
+		font-size: 100%;
+	}
 
-    h1 {
-        font-size: 230%;
-    }
+	h1 {
+		font-size: 230%;
+	}
 
-    h3 {
-        font-size: 135%;
-    }
+	h3 {
+		font-size: 135%;
+	}
 
-    p {
-        font-size: 90%;
-    }
+	p {
+		font-size: 90%;
+	}
 }
 
 @media only screen and (max-width: 400px) {
-    section>a {
-        font-size: 70%;
-    }
+	section > a {
+		font-size: 70%;
+	}
 
-    h1 {
-        font-size: 200%;
-    }
+	h1 {
+		font-size: 200%;
+	}
 
-    h3 {
-        font-size: 105%;
-    }
+	h3 {
+		font-size: 105%;
+	}
 
-    p {
-        font-size: 75%;
-    }
+	p {
+		font-size: 75%;
+	}
 }
