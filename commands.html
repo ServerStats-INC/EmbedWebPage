@@ -60,16 +60,18 @@
 
     <section>
         <div class="features">
-            <h1>Important</h1>
+            <h1>IMPORTANT</h1>
+        </div>
+        <div class="features">
             <p>
-                You need to run the setup command first, without it the bot won't do much. Use <b>s/setup</b> or <b>@ServerStats setup</b> to run the setup. The following counter are supported <b>all members</b>, <b>members</b>, <b>bots</b>, <b>channels</b>, <b>categories</b>, <b>voice</b>, <b>text</b>, <b>roles</b>, <b>online</b>, <b>offline</b>, <b>role</b>, <b>emojis</b>, <b>static</b>, <b>animated</b>, <b>bans</b>, <b>connected</b>, <b>status</b>, <b>playing</b> and <b>minecraft</b>, use <b>s/counter</b> or <b>@ServerStats counter</b> to see more information about the counters.
+                To start the bot and get the 3 default counter, use <b>s/setup</b> or <b>@ServerStats setup</b>.<br>And with <b>s/counter</b> or <b>@ServerStats counter</b>, you can see a list of all available counters.
             </p>
         </div>
     </section>
 
     <section>
         <div class="features">
-            <h1>Normal</h1>
+            <h1>NORMAL</h1>
         </div>
         <div class="features">
             <h3>s/help &#60;command&#62;</h3>
@@ -129,7 +131,7 @@
 	
     <section>
         <div class="features">
-            <h1>Admin</h1>
+            <h1>ADMIN</h1>
         </div>
         <div class="features">
             <h3>s/setup</h3>
@@ -189,7 +191,7 @@
 
     <section>
         <div class="features">
-            <h1>Info</h1>
+            <h1>INFO</h1>
         </div>
         <div class="features">
             <h3>s/info</h3>
@@ -253,7 +255,11 @@
 
     <!-- Footer -->
     <footer>
-        Copyright &copy; 2018 - 2021 ZixeSea - All rights reserved.
+        Copyright &copy; 2018 - 
+        <span id="copyright">
+            <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+        </span>
+         ZixeSea - All rights reserved.
     </footer>
 </body>
 
