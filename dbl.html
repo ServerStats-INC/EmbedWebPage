@@ -41,6 +41,8 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 	
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154843015-1"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -49,159 +51,198 @@
     </script>
 </head>
 
-<body>	
+<body>
+    <header>
+        <img src="https://camo.githubusercontent.com/3a2f2c86b15e5f762bfd91acaac5a73cad68ee6a0cb536c4f60fe1813c504232/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f3632363339323931343138333834373935392f3832363833343432343937313738383330322f6b6b6b2e706e67" alt="ServerStats logo">
+    </header>
+
     <section>
         <div class="features">
             <h1>IMPORTANT</h1>
         </div>
         <div class="features">
-            <p>
-                To start the bot and get the 3 default counter, use <b>s/setup</b> or <b>@ServerStats setup</b>.<br>And with <b>s/counter</b> or <b>@ServerStats counter</b>, you can see a list of all available counters.
-            </p>
+            <p>Run <b>s/setup</b> or <b>@ServerStats setup</b> to start the bot and <b>s/counter</b> or <b>@ServerStats counter</b> to see all available counters.</p>
         </div>
     </section>
 
-    <section>
+    <!-- <section class="search">
         <div class="features">
-            <h1>NORMAL</h1>
+            <h1>SEARCH</h1>
         </div>
-        <div class="features">
-            <h3>s/help &#60;command&#62;</h3>
-            <p>
-                Send all the commands if you don't put a command after it else it will if info about the command.
-            </p>
-        </div>
-        <div class="features">
-            <h3>s/ping</h3>
-            <p>
-                Sends a pong message with latency.
-            </p>
-        </div>
-        <div class="features">
-            <h3>s/invite</h3>
-            <p>
-                Sends an invite link for the bot.
-            </p>
-        </div>
-        <div class="features">
-            <h3>s/vote</h3>
-            <p>
-                Sends instructions on how to vote for the bot.
-            </p>
-        </div>
-        <div class="features">
-            <h3>s/donate</h3>
-            <p>
-                Sends instructions on how to donate.
-            </p>
-        </div>
-	<div class="features">
-            <h3>s/support</h3>
-            <p>
-                Sends info about how to get help.
-            </p>
-	</div>
-	<div class="features">
-            <h3>s/partners</h3>
-            <p>
-                Sends info about our partners.
-            </p>
-        </div>
-    </section>
+        <input type="text" id="myInput" onkeyup="searchFuntion()" placeholder="Search for commands.." title="Type in a command">
+    </section> -->
 
-    <section>
+    <section id="myTable">
         <div class="features">
-            <h1>INFO</h1>
+            <h1>COMMANDS</h1>
         </div>
-        <div class="features">
-            <h3>s/bot</h3>
-            <p>
-                Sends info about the bot.
-            </p>
+        <div class="features" onclick="showHideRow('hidden_row1');">
+            <h3>s/help [command]</h3>
         </div>
-        <div class="features">
-            <h3>s/serverinfo</h3>
-            <p>
-                Sends info about the server.
-            </p>
+        <div class="features-open" id="hidden_row1" class="hidden_row">
+            <p>Send all the commands if you don't put a command after it else it will if info about the command.</p>
         </div>
-        <div class="features">
-            <h3>s/userinfo &#60;@mention/ID&#62;</h3>
-            <p>
-                Sends info about an user.
-            </p>
-        </div>    
-        <div class="features">
-            <h3>s/roleinfo &#60;ID/mention&#62;</h3>
-            <p>
-                Sends info about an role.
-            </p>
-	</div>
-        <div class="features">
-            <h3>s/channelinfo &#60;ID/mention&#62;</h3>
-            <p>
-                Sends info about an channels.
-            </p>
+        <div class="features" onclick="showHideRow('hidden_row15');">
+            <h3>s/setup [channel type]</h3>
         </div>
-        <div class="features">
-            <h3>s/inviteinfo &#60;URL/code&#62;</h3>
-            <p>
-                Sends info about an invite.
-            </p>
+        <div class="features-open" id="hidden_row15" class="hidden_row">
+            <p>This command will setup the bot and create all the default counters that the bot has.</p>
         </div>
-        <div class="features">
-            <h3>s/avatar &#60;@mention/ID&#62;</h3>
-            <p>
-                Sends the avatar form an user.
-            </p>
+        <div class="features" onclick="showHideRow('hidden_row16');">
+            <h3>s/counter [action] [counter] [channel type] [additional]</h3>
         </div>
-    </section>
-	
-    <section>
-        <div class="features">
-            <h1>ADMIN</h1>
+        <div class="features-open" id="hidden_row16" class="hidden_row">
+            <p>With this command you can turn manage all counters.</p>
         </div>
-        <div class="features">
-            <h3>s/setup</h3>
-            <p>
-                This command will set up the bot and create the 3 default counters.
-            </p>
+        <div class="features" onclick="showHideRow('hidden_row21');">
+            <h3>s/welcome &#60;action&#62; [additional]</h3>
         </div>
-        <div class="features">
-            <h3>s/counter &#60;create&#62;</h3>
-            <p>
-                With this command you can turn on/off counter.
-            </p>
+        <div class="features-open" id="hidden_row21" class="hidden_row">
+            <p>This will create a join and leave log channel.</p>
         </div>
-        <div class="features">
+        <div class="features" onclick="showHideRow('hidden_row22');">
+            <h3>s/goal &#60;action&#62; [type] [channel type] [announce channel]</h3>
+        </div>
+        <div class="features-open" id="hidden_row22" class="hidden_row">
+            <p>This will create a goal counter and message.</p>
+        </div>
+        <div class="features" onclick="showHideRow('hidden_row27');">
+            <h3>s/members [members/bots/role-ID/@role-mention]</h3>
+        </div>
+        <div class="features-open" id="hidden_row27" class="hidden_row">
+            <p>This command will send a file with all the members in your server.</p>
+        </div>
+        <div class="features" onclick="showHideRow('hidden_row25');">
+            <h3>s/debug [&#60;ID&#62;/server/gain]</h3>
+        </div>
+        <div class="features-open" id="hidden_row25" class="hidden_row">
+            <p>This command will send you debug info, this can help fix problems faster.</p>
+        </div>
+        <div class="features" onclick="showHideRow('hidden_row17');">
             <h3>s/reset</h3>
-            <p>
-                With this command you can reset the counters.
-            </p>
         </div>
-        <div class="features">
+        <div class="features-open" id="hidden_row17" class="hidden_row">
+            <p>With this command you can reset the counters.</p>
+        </div>
+        <div class="features" onclick="showHideRow('hidden_row26');">
+            <h3>s/check</h3>
+        </div>
+        <div class="features-open" id="hidden_row26" class="hidden_row">
+            <p>This will check if the bot has the right permissions in the server and counter channels.</p>
+        </div>
+        <div class="features" onclick="showHideRow('hidden_row20');">
+            <h3>s/category [action]</h3>
+        </div>
+        <div class="features-open" id="hidden_row20" class="hidden_row">
+            <p>This will create a new category and puts the counter under it. (you don't need a category)</p>
+        </div>
+        <div class="features" onclick="showHideRow('hidden_row9');">
+            <h3>s/serverinfo</h3>
+        </div>
+        <div class="features-open" id="hidden_row9" class="hidden_row">
+            <p>Sends info about the server.</p>
+        </div>
+        <div class="features" onclick="showHideRow('hidden_row10');">
+            <h3>s/userinfo [ID/@mention]</h3>
+        </div>
+        <div class="features-open" id="hidden_row10" class="hidden_row">
+            <p>Sends info about an user.</p>
+        </div>  
+        <div class="features" onclick="showHideRow('hidden_row11');">
+            <h3>s/roleinfo &#60;ID/@mention&#62;</h3>
+	    </div>
+        <div class="features-open" id="hidden_row11" class="hidden_row">
+            <p>Sends info about an role.</p>
+        </div>
+        <div class="features" onclick="showHideRow('hidden_row12');">
+            <h3>s/channelinfo [ID/#mention]</h3>
+        </div>
+        <div class="features-open" id="hidden_row12" class="hidden_row">
+            <p>Sends info about an channels.</p>
+        </div>
+        <div class="features" onclick="showHideRow('hidden_row13');">
+            <h3>s/inviteinfo &#60;URL/code&#62;</h3>
+        </div>
+        <div class="features-open" id="hidden_row13" class="hidden_row">
+            <p>Sends info about an invite.</p>
+        </div>
+        <div class="features" onclick="showHideRow('hidden_row14');">
+            <h3>s/avatar [ID/@mention]</h3>
+        </div>
+        <div class="features-open" id="hidden_row14" class="hidden_row">
+            <p>Sends the avatar form an user.</p>
+        </div>
+        <div class="features" onclick="showHideRow('hidden_row24');">
+            <h3>s/emojiinfo &#60;ID/emoji/emoji name&#62;</h3>
+        </div>
+        <div class="features-open" id="hidden_row24" class="hidden_row">
+            <p>This command will send information from the emoji that you have provided.</p>
+        </div>
+        <div class="features" onclick="showHideRow('hidden_row28');">
+            <h3>s/prefix &#60;new prefix/reset&#62;</h3>
+        </div>
+        <div class="features-open" id="hidden_row28" class="hidden_row">
+            <p>This command will change the prefix for your server.</p>
+        </div>
+        <div class="features" onclick="showHideRow('hidden_row29');">
+            <h3>s/command &#60;enable/disable&#62; &#60;command&#62;</h3>
+        </div>
+        <div class="features-open" id="hidden_row29" class="hidden_row">
+            <p>This command will disable / enable a command, currently you can only disable "info" commands.</p>
+        </div>
+        <div class="features" onclick="showHideRow('hidden_row8');">
+            <h3>s/bot</h3>
+        </div>
+        <div class="features-open" id="hidden_row8" class="hidden_row">
+            <p>Sends info about the bot.</p>
+        </div>
+        <div class="features" onclick="showHideRow('hidden_row18');">
             <h3>s/data</h3>
-            <p>
-                This will send all the data saved about your server.
-            </p>
         </div>
-        <div class="features">
-            <h3>s/category</h3>
-            <p>
-                This will create a new category and puts the counter under it. (you don't need a category)
-            </p>
+        <div class="features-open" id="hidden_row18" class="hidden_row">
+            <p>This will send all the data saved about your server.</p>
         </div>
-        <div class="features">
-            <h3>s/welcome &#60;create&#62;</h3>
-            <p>
-                This will create a join and leave log channel.
-            </p>
+        <div class="features" onclick="showHideRow('hidden_row2');">
+            <h3>s/ping</h3>
         </div>
-        <div class="features">
-            <h3>s/goal &#60;create&#62;</h3>
-            <p>
-                This will create a goal counter and message.
-            </p>
+        <div class="features-open" id="hidden_row2" class="hidden_row">
+            <p>Sends a pong message with latency.</p>
+        </div>
+        <div class="features" onclick="showHideRow('hidden_row3');">
+            <h3>s/invite</h3>
+        </div>
+        <div class="features-open" id="hidden_row3" class="hidden_row">
+            <p>Sends an invite link for the bot.</p>
+        </div>
+        <div class="features" onclick="showHideRow('hidden_row4');">
+            <h3>s/vote</h3>
+        </div>
+        <div class="features-open" id="hidden_row4" class="hidden_row">
+            <p>Sends instructions on how to vote for the bot.</p>
+        </div>
+        <div class="features" onclick="showHideRow('hidden_row5');">
+            <h3>s/donate</h3>
+        </div>
+        <div class="features-open" id="hidden_row5" class="hidden_row">
+            <p>Sends instructions on how to donate.</p>
+        </div>
+	    <div class="features" onclick="showHideRow('hidden_row6');">
+            <h3>s/support</h3>
+	    </div>
+        <div class="features-open" id="hidden_row6" class="hidden_row">
+            <p>Sends info about how to get help.</p>
+        </div>
+	    <div class="features" onclick="showHideRow('hidden_row7');">
+            <h3>s/partners</h3>
+        </div>
+        <div class="features-open" id="hidden_row7" class="hidden_row">
+            <p>Sends info about our partners.</p>
+        </div>
+        <div class="features" onclick="showHideRow('hidden_row23');">
+            <h3>s/customize</h3>
+        </div>
+        <div class="features-open" id="hidden_row23" class="hidden_row">
+            <p>Sends instruction of how to change the text of the counter.</p>
         </div>
     </section>
 
@@ -210,8 +251,32 @@
         <span id="copyright">
             <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
         </span>
-         ZixeSea - All rights reserved.
+        ZixeSea - All rights reserved.
     </footer>
 </body>
+
+<script>
+function searchFuntion() {
+    let input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    div = table.getElementsByTagName("div");
+    for (i = 0; i < div.length; i++) {
+        h3 = div[i].getElementsByTagName("h3")[0];
+        if (h3) {
+            txtValue = h3.textContent || h3.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                div[i].style.display = "";
+            } else {
+                div[i].style.display = "none";
+            }
+        }       
+    }
+}
+function showHideRow(row) {
+    $("#" + row).toggle();
+}
+</script>
 
 </html>
