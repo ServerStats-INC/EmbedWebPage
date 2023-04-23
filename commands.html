@@ -1,269 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ServerStats Bot | Commands</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="author" content="ZixeSea">
-    <meta name="keywords" content="ServerStats, Member Count, Server Stats, Member Counter, ZixeSea, ZixeSea#1234, ServerStats Bot, Discord ServerStats, ServerStats Discord Bot, Member Count Bot, Discord Member Count, Member Count Discord Bot, Discord Stats, Discord Bots">
-    <meta name="distribution" content="global">
-    <meta name="rating" content="safe for kids">
-    <meta name="revisit-after" content="1 day">
-    <meta name="description" content="ServerStats bot show off your member, channel, role, emoji, boost, and, goal count in your server throw the use of channels (also fully customizable).">
-    <meta name="theme-color" content="#4B5F83">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="english">
-
-    <meta name="twitter:card" value="summary">
-    <meta name="twitter:title" content="ServerStats Bot">
-    <meta name="twitter:description" content="ServerStats bot show off your member, channel, role, emoji, boost, and, goal count in your server throw the use of channels (also fully customizable).">
-    <meta property="twitter:image" content="https://serverstatsbot.com/serverstats_icon.png">
-    <meta property="twitter:image:alt" content="ServerStats's Logo">
-
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" value="ServerStats Bot">
-    <meta property="og:title" content="ServerStats Bot">
-    <meta property="og:url" content="https://serverstatsbot.com">
-    <meta property="og:description" content="ServerStats bot show off your member, channel, role, emoji, boost, and, goal count in your server throw the use of channels (also fully customizable).">
-    <meta property="og:image" content="https://serverstatsbot.com/serverstats_icon.png">
-    <meta property="og:image:alt" content="ServerStats's Logo">
-
-    <meta name="apple-mobile-web-app-capable" content="no">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="ServerStats Bot">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="https://serverstatsbot.com/serverstats_icon.png">
-    <link rel="shortcut-icon" href="https://serverstatsbot.com/serverstats_icon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap-reboot.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-	
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style/main.css"> 
+    <script src="components/header.js" type="text/javascript" defer></script>
+    <script src="components/navbar.js" type="text/javascript" defer></script>
+    <script src="components/commands.js" type="text/javascript" defer></script>
+    <script src="components/footer.js" type="text/javascript" defer></script>
+  
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154843015-1"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-154843015-1');
-    </script>
-</head>
+    <script async src="./script/google.js"></script>
+  </head>
+  <body>
+    <header-component></header-component>
+    <navbar-component></navbar-component>
+    <main>
+      <commands-component></commands-component>
+    </main>
+    <footer-component></footer-component>
+  </body>
 
-<body>
-    <header>
-        <img src="https://camo.githubusercontent.com/3a2f2c86b15e5f762bfd91acaac5a73cad68ee6a0cb536c4f60fe1813c504232/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f3632363339323931343138333834373935392f3832363833343432343937313738383330322f6b6b6b2e706e67" alt="ServerStats logo">
-    </header>
-    
-    <!-- Section 1 -->
-    <section>
-    <a href="https://discord.com/oauth2/authorize?client_id=458276816071950337&permissions=1100824&response_type=code&redirect_uri=https%3A%2F%2Fserverstatsbot.com%2Finvite&scope=bot+applications.commands"><b>ADD THE BOT</b></a>
-	<a href="https://github.com/ZixeSea/ServerStats/blob/master/HOW_TO_INSTALL.md"><b>SETUP INSTRUCTIONS</b></a>
-	<a href="index.html"><b>GO BACK</b></a>
-    </section>
-
-    <section>
-        <div class="features">
-            <h1>IMPORTANT</h1>
-        </div>
-        <div class="features">
-            <p>Run <b>/setup</b> to start the bot and <b>/counter</b> to see all available counters.</p>
-        </div>
-    </section>
-
-    <section id="myTable">
-        <div class="features">
-            <h1>COMMANDS</h1>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row1');">
-            <h3>/help [command]</h3>
-        </div>
-        <div class="features-open" id="hidden_row1" class="hidden_row">
-            <p>Send all the commands if you don't put a command after it else it will if info about the command.</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row15');">
-            <h3>/setup [channel type]</h3>
-        </div>
-        <div class="features-open" id="hidden_row15" class="hidden_row">
-            <p>This command will setup the bot and create all the default counters that the bot has.</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row16');">
-            <h3>/counter [action] [counter] [channel type] [additional]</h3>
-        </div>
-        <div class="features-open" id="hidden_row16" class="hidden_row">
-            <p>With this command you can turn manage all counters.</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row21');">
-            <h3>/welcome &#60;action&#62; [additional]</h3>
-        </div>
-        <div class="features-open" id="hidden_row21" class="hidden_row">
-            <p>This will create a join and leave log channel.</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row22');">
-            <h3>/goal &#60;action&#62; [type] [channel type] [announce channel]</h3>
-        </div>
-        <div class="features-open" id="hidden_row22" class="hidden_row">
-            <p>This will create a goal counter and message.</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row27');">
-            <h3>/members [members/bots/role-ID/@role-mention]</h3>
-        </div>
-        <div class="features-open" id="hidden_row27" class="hidden_row">
-            <p>This command will send a file with all the members in your server.</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row25');">
-            <h3>/debug [&#60;ID&#62;/server/gain]</h3>
-        </div>
-        <div class="features-open" id="hidden_row25" class="hidden_row">
-            <p>This command will send you debug info, this can help fix problems faster.</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row17');">
-            <h3>/reset</h3>
-        </div>
-        <div class="features-open" id="hidden_row17" class="hidden_row">
-            <p>With this command you can reset the counters.</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row26');">
-            <h3>/check</h3>
-        </div>
-        <div class="features-open" id="hidden_row26" class="hidden_row">
-            <p>This will check if the bot has the right permissions in the server and counter channels.</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row20');">
-            <h3>/category [action]</h3>
-        </div>
-        <div class="features-open" id="hidden_row20" class="hidden_row">
-            <p>This will create a new category and puts the counter under it. (you don't need a category)</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row9');">
-            <h3>/serverinfo</h3>
-        </div>
-        <div class="features-open" id="hidden_row9" class="hidden_row">
-            <p>Sends info about the server.</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row10');">
-            <h3>/userinfo [ID/@mention]</h3>
-        </div>
-        <div class="features-open" id="hidden_row10" class="hidden_row">
-            <p>Sends info about an user.</p>
-        </div>  
-        <div class="features" onclick="showHideRow('hidden_row11');">
-            <h3>/roleinfo &#60;ID/@mention&#62;</h3>
-        </div>
-        <div class="features-open" id="hidden_row11" class="hidden_row">
-            <p>Sends info about an role.</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row12');">
-            <h3>/channelinfo [ID/#mention]</h3>
-        </div>
-        <div class="features-open" id="hidden_row12" class="hidden_row">
-            <p>Sends info about an channels.</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row13');">
-            <h3>/inviteinfo &#60;URL/code&#62;</h3>
-        </div>
-        <div class="features-open" id="hidden_row13" class="hidden_row">
-            <p>Sends info about an invite.</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row14');">
-            <h3>/avatar [ID/@mention]</h3>
-        </div>
-        <div class="features-open" id="hidden_row14" class="hidden_row">
-            <p>Sends the avatar form an user.</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row24');">
-            <h3>/emojiinfo &#60;ID/emoji/emoji name&#62;</h3>
-        </div>
-        <div class="features-open" id="hidden_row24" class="hidden_row">
-            <p>This command will send information from the emoji that you have provided.</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row28');">
-            <h3>/prefix &#60;new prefix/reset&#62;</h3>
-        </div>
-        <div class="features-open" id="hidden_row28" class="hidden_row">
-            <p>This command will change the prefix for your server.</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row29');">
-            <h3>/command &#60;enable/disable&#62; &#60;command&#62;</h3>
-        </div>
-        <div class="features-open" id="hidden_row29" class="hidden_row">
-            <p>This command will disable / enable a command, currently you can only disable "info" commands.</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row8');">
-            <h3>/bot</h3>
-        </div>
-        <div class="features-open" id="hidden_row8" class="hidden_row">
-            <p>Sends info about the bot.</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row18');">
-            <h3>/data</h3>
-        </div>
-        <div class="features-open" id="hidden_row18" class="hidden_row">
-            <p>This will send all the data saved about your server.</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row2');">
-            <h3>/ping</h3>
-        </div>
-        <div class="features-open" id="hidden_row2" class="hidden_row">
-            <p>Sends a pong message with latency.</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row3');">
-            <h3>/invite</h3>
-        </div>
-        <div class="features-open" id="hidden_row3" class="hidden_row">
-            <p>Sends an invite link for the bot.</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row4');">
-            <h3>/vote</h3>
-        </div>
-        <div class="features-open" id="hidden_row4" class="hidden_row">
-            <p>Sends instructions on how to vote for the bot.</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row5');">
-            <h3>/donate</h3>
-        </div>
-        <div class="features-open" id="hidden_row5" class="hidden_row">
-            <p>Sends instructions on how to donate.</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row6');">
-            <h3>/support</h3>
-        </div>
-        <div class="features-open" id="hidden_row6" class="hidden_row">
-            <p>Sends info about how to get help.</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row7');">
-            <h3>/partners</h3>
-        </div>
-        <div class="features-open" id="hidden_row7" class="hidden_row">
-            <p>Sends info about our partners.</p>
-        </div>
-        <div class="features" onclick="showHideRow('hidden_row23');">
-            <h3>/customize</h3>
-        </div>
-        <div class="features-open" id="hidden_row23" class="hidden_row">
-            <p>Sends instruction of how to change the text of the counter.</p>
-        </div>
-    </section>
-
-    <a href="https://top.gg/bot/458276816071950337">
-        <img class="discordbots" src="https://top.gg/api/widget/458276816071950337.svg" alt="ServerStats" />
-    </a>
-
-    <!-- Footer -->
-    <footer>
-        Copyright &copy; 2018 - 
-        <span id="copyright">
-            <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
-        </span>
-        ZixeSea - All rights reserved.
-    </footer>
-</body>
-
-<script>
+  <script>
     function showHideRow(row) {
         $("#" + row).toggle();
     }
-</script>
-
+  </script>
 </html>
